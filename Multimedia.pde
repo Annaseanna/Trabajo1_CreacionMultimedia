@@ -1,31 +1,83 @@
 void setup(){
-  size(530,530);
+  size(1055,950);
   background(0);
-  
+  frameRate(3);
+  for(int r = 0; r < 10; r++){
+    for(int c = 0; c < 11; c++){   
+      int x = int(random(1,4));
+      int C = 105*c;
+      int R = 105*r;
+      switch(x){
+        case 1:
+          fill(random(255),random(255),random(255));
+          square(5+C,5+R,100);
+          break;
+        case 2:
+          fill(random(255),random(255),random(255));
+          circle(55+C,55+R,100);
+          break;
+        case 3:
+          fill(random(255),random(255),random(255));
+          quad(55+C,5+R,105+C,55+R,55+C,105+R,5+C,55+R);
+        break;
+      }
+      x = int(random(1,4));
+      switch(x){
+        case 1:
+          fill(random(255),random(255),random(255));
+          square(15+C,15+R,80);
+          break;
+        case 2:
+          fill(random(255),random(255),random(255));
+          circle(55+C,55+R,80);
+          break;
+        case 3:
+          fill(random(255),random(255),random(255));
+          quad(55+C,15+R,95+C,55+R,55+C,95+R,15+C,55+R);
+        break;
+      }
+      x = int(random(1,4));
+      switch(x){
+        case 1:
+          fill(random(255),random(255),random(255));
+          square(25+C,25+R,60);
+          break;
+        case 2:
+          fill(random(255),random(255),random(255));
+          circle(55+C,55+R,60);
+          break;
+        case 3:
+          fill(random(255),random(255),random(255));
+          quad(55+C,25+R,85+C,55+R,55+C,85+R,25+C,55+R);
+        break;
+      }
+      x = int(random(1,4));
+      switch(x){
+        case 1:
+          fill(random(255),random(255),random(255));
+          square(35+C,35+R,40);
+          break;
+        case 2:
+          fill(random(255),random(255),random(255));
+          circle(55+C,55+R,40);
+          break;
+        case 3:
+          fill(random(255),random(255),random(255));
+          quad(55+C,35+R,75+C,55+R,55+C,75+R,35+C,55+R);
+        break;
+      }
+    }
+  }
 }
 
-int[] opcion = {1,2,3,4};
+
 void draw(){
-  int x = opcion[0]; //random
-  switch(x){
-    case 1:
-      fill(255);
-      square(5,5,100);
-      break;
-    case 2:
-      fill(255);
-      circle(55,55,100);
-      break;
-    case 3:
-      fill(255);
-      quad(55,5,105,55,55,105,5,55);
-    break;
-    
-  }
+
+  
+  //x = int(random(1,4));
+  
   //int x = opcion[0]; //rando
-  //fill(255,0,0);
-  //square(15,15,80);
-  //fill(255);
+
   //rect(50,5,10,50);
   //fill(255);
   //circle(160,55,100);
