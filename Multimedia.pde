@@ -1,14 +1,24 @@
 void setup(){
   size(1055,950);
   background(0);
-  frameRate(1);
+  frameRate(60);
   
 }
 
-boolean b1 = true;
-int x;
+int[][][] figuras(){
+  int elementos[][][] = new int[10][11][4];
+for ( int  y = 0;  y < 10 ; y++ ) {
+     for( int  x = 0 ;  x <11 ;  x++ ){
+         for ( int  z = 0 ;z < 4 ;  z++ ){ 
+               elementos[y][x][z] = int(random(1,4)); 
+         }
+     }
+ }
+ 
+ return elementos;
+}
 
-
+boolean b = true;
 float xOff1 = 0.0;
 float yOff1 = 500.0;
 float zOff1 = 1000.0;
@@ -25,16 +35,19 @@ float xOff4 = 250.0;
 float yOff4 = 750.0;
 float zOff4 = 950.0;
 float increment = 0.0001;
+
+  int[][][] e = new int[10][11][4];
 void draw(){
+
+  if (b){
+    e = figuras();
+  }
 for(int r = 0; r < 10; r++){
     for(int c = 0; c < 11; c++){   
       
       int C = 105*c;
       int R = 105*r;
-      if (b1){
-        x = int(random(1,4));
-      }
-      switch(x){
+      switch(e[r][c][0]){
         case 1:
           fill(noise(xOff1)*255,noise(yOff1)*255,noise(zOff1)*255);
           square(5+C,5+R,100);
@@ -51,8 +64,7 @@ for(int r = 0; r < 10; r++){
       xOff1 += increment;
       yOff1 += increment;
       zOff1 += increment;
-
-      switch(x){
+      switch(e[r][c][1]){
         case 1:
           fill(noise(xOff2)*255,noise(yOff2)*255,noise(zOff2)*255);
           square(15+C,15+R,80);
@@ -69,8 +81,7 @@ for(int r = 0; r < 10; r++){
       xOff2 += increment;
       yOff2 += increment;
       zOff2 += increment;
-
-      switch(x){
+      switch(e[r][c][2]){
         case 1:
           fill(noise(xOff3)*255,noise(yOff3)*255,noise(zOff3)*255);
           square(25+C,25+R,60);
@@ -87,8 +98,7 @@ for(int r = 0; r < 10; r++){
       xOff3 += increment;
       yOff3 += increment;
       zOff3 += increment;
-
-      switch(x){
+      switch(e[r][c][3]){
         case 1:
           fill(noise(xOff4)*255,noise(yOff4)*255,noise(zOff4)*255);
           square(35+C,35+R,40);
@@ -107,6 +117,7 @@ for(int r = 0; r < 10; r++){
       zOff4 += increment;
     }
   }
-  b1 = false;
+  
+b = false;
   
 }
