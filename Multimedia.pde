@@ -15,7 +15,7 @@ color[] colors  = {
 void setup(){
   size(905,905);
   background(0);
-  frameRate(10);
+  frameRate(1);
 }
 
 int[][][] figuras(){
@@ -32,24 +32,6 @@ for ( int  y = 0;  y < 20 ; y++ ) {
 }
 
 boolean b = true;
-float xOff1 = 0.0;
-float yOff1 = 500.0;
-float zOff1 = 1000.0;
-
-float xOff2 = 1000.0;
-float yOff2 = 0.0;
-float zOff2 = 500.0;
-
-float xOff3 = 500.0;
-float yOff3 = 1000.0;
-float zOff3 = 0.0;
-
-float xOff4 = 250.0;
-float yOff4 = 750.0;
-float zOff4 = 950.0;
-float increment = 0.0001;
-
-
 
   int[][][] e = new int[20][20][4];
 void draw(){
@@ -79,9 +61,7 @@ for(int r = 0; r < 20; r++){
           quad(25+C,5+R,45+C,25+R,25+C,45+R,5+C,25+R);
         break;
       }
-      xOff1 += increment;
-      yOff1 += increment;
-      zOff1 += increment;
+
       switch(e[r][c][1]){
         case 1:
           fill(colors[int(random(1,11))]);
@@ -99,9 +79,7 @@ for(int r = 0; r < 20; r++){
           quad(25+C,10+R,40+C,25+R,25+C,40+R,10+C,25+R);
         break;
       }
-      xOff2 += increment;
-      yOff2 += increment;
-      zOff2 += increment;
+
       switch(e[r][c][2]){
         case 1:
           fill(colors[int(random(1,11))]);
@@ -119,9 +97,7 @@ for(int r = 0; r < 20; r++){
           quad(25+C,15+R,35+C,25+R,25+C,35+R,15+C,25+R);
         break;
       }
-      xOff3 += increment;
-      yOff3 += increment;
-      zOff3 += increment;
+
       switch(e[r][c][3]){
         case 1:
           fill(colors[int(random(1,11))]);
@@ -139,9 +115,6 @@ for(int r = 0; r < 20; r++){
           quad(25+C,20+R,30+C,25+R,25+C,30+R,20+C,25+R);
         break;
       }
-      xOff4 += increment;
-      yOff4 += increment;
-      zOff4 += increment;
     }
   }
   
