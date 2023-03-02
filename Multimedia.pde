@@ -1,14 +1,14 @@
 void setup(){
-  size(1055,950);
+  size(905,905);
   background(0);
-  frameRate(60);
+  frameRate(1);
   
 }
 
 int[][][] figuras(){
-  int elementos[][][] = new int[10][11][4];
-for ( int  y = 0;  y < 10 ; y++ ) {
-     for( int  x = 0 ;  x <11 ;  x++ ){
+  int elementos[][][] = new int[20][20][4];
+for ( int  y = 0;  y < 20 ; y++ ) {
+     for( int  x = 0 ;  x <20 ;  x++ ){
          for ( int  z = 0 ;z < 4 ;  z++ ){ 
                elementos[y][x][z] = int(random(1,4)); 
          }
@@ -36,32 +36,32 @@ float yOff4 = 750.0;
 float zOff4 = 950.0;
 float increment = 0.0001;
 
-  int[][][] e = new int[10][11][4];
+  int[][][] e = new int[20][20][4];
 void draw(){
 
   if (b){
     e = figuras();
   }
-for(int r = 0; r < 10; r++){
-    for(int c = 0; c < 11; c++){   
+for(int r = 0; r < 20; r++){
+    for(int c = 0; c < 20; c++){   
       
-      int C = 105*c;
-      int R = 105*r;
+      int C = 45*c;
+      int R = 45*r;
       switch(e[r][c][0]){
         case 1:
           fill(noise(xOff1)*255,noise(yOff1)*255,noise(zOff1)*255);
           noStroke();
-          square(5+C,5+R,100);
+          square(5+C,5+R,40);
           break;
         case 2:
           fill(noise(xOff1)*255,noise(yOff1)*255,noise(zOff1)*255);
           noStroke();
-          circle(55+C,55+R,100);
+          circle(25+C,25+R,40);
           break;
         case 3:
           fill(noise(xOff1)*255,noise(yOff1)*255,noise(zOff1)*255);
           noStroke();
-          quad(55+C,5+R,105+C,55+R,55+C,105+R,5+C,55+R);
+          quad(25+C,5+R,45+C,25+R,25+C,45+R,5+C,25+R);
         break;
       }
       xOff1 += increment;
@@ -69,19 +69,19 @@ for(int r = 0; r < 10; r++){
       zOff1 += increment;
       switch(e[r][c][1]){
         case 1:
-          fill(noise(xOff2)*255,noise(yOff2)*255,noise(zOff2)*255);
+          fill(noise(xOff2)*150,noise(yOff2)*150,noise(zOff2)*150);
           noStroke();
-          square(15+C,15+R,80);
+          square(10+C,10+R,30);
           break;
         case 2:
-          fill(noise(xOff2)*255,noise(yOff2)*255,noise(zOff2)*255);
+          fill(noise(xOff2)*150,noise(yOff2)*150,noise(zOff2)*150);
           noStroke();
-          circle(55+C,55+R,80);
+          circle(25+C,25+R,30);
           break;
         case 3:
-          fill(noise(xOff2)*255,noise(yOff2)*255,noise(zOff2)*255);
+          fill(noise(xOff2)*150,noise(yOff2)*150,noise(zOff2)*150);
           noStroke();
-          quad(55+C,15+R,95+C,55+R,55+C,95+R,15+C,55+R);
+          quad(25+C,10+R,40+C,25+R,25+C,40+R,10+C,25+R);
         break;
       }
       xOff2 += increment;
@@ -91,17 +91,17 @@ for(int r = 0; r < 10; r++){
         case 1:
           fill(noise(xOff3)*255,noise(yOff3)*255,noise(zOff3)*255);
           noStroke();
-          square(25+C,25+R,60);
+          square(15+C,15+R,20);
           break;
         case 2:
           fill(noise(xOff3)*255,noise(yOff3)*255,noise(zOff3)*255);
           noStroke();
-          circle(55+C,55+R,60);
+          circle(25+C,25+R,20);
           break;
         case 3:
           fill(noise(xOff3)*255,noise(yOff3)*255,noise(zOff3)*255);
           noStroke();
-          quad(55+C,25+R,85+C,55+R,55+C,85+R,25+C,55+R);
+          quad(25+C,15+R,35+C,25+R,25+C,35+R,15+C,25+R);
         break;
       }
       xOff3 += increment;
@@ -111,17 +111,17 @@ for(int r = 0; r < 10; r++){
         case 1:
           fill(noise(xOff4)*255,noise(yOff4)*255,noise(zOff4)*255);
           noStroke();
-          square(35+C,35+R,40);
+          square(20+C,20+R,10);
           break;
         case 2:
           fill(noise(xOff4)*255,noise(yOff4)*255,noise(zOff4)*255);
           noStroke();
-          circle(55+C,55+R,40);
+          circle(25+C,25+R,10);
           break;
         case 3:
           fill(noise(xOff4)*255,noise(yOff4)*255,noise(zOff4)*255);
           noStroke();
-          quad(55+C,35+R,75+C,55+R,55+C,75+R,35+C,55+R);
+          quad(25+C,20+R,30+C,25+R,25+C,30+R,20+C,25+R);
         break;
       }
       xOff4 += increment;
