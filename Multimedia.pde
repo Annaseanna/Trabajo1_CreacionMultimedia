@@ -1,8 +1,21 @@
+color color1= color(255, 225, 93);
+color color2= color(244, 157, 26);
+color color3= color(220, 53, 53);
+color color4= color(176, 30, 104);
+color color5= color(255, 245, 228);
+color color6= color(255, 196, 196);
+color color7= color(238, 105, 131);
+color color8= color(133, 14, 53);
+color color9= color(59, 154, 225);
+color color10= color(49, 32, 224);
+color color11= color(240, 234, 190);
+color[] colors  = {  
+  color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11
+};
 void setup(){
   size(905,905);
   background(0);
-  frameRate(1);
-  
+  frameRate(10);
 }
 
 int[][][] figuras(){
@@ -36,6 +49,8 @@ float yOff4 = 750.0;
 float zOff4 = 950.0;
 float increment = 0.0001;
 
+
+
   int[][][] e = new int[20][20][4];
 void draw(){
 
@@ -49,17 +64,17 @@ for(int r = 0; r < 20; r++){
       int R = 45*r;
       switch(e[r][c][0]){
         case 1:
-          fill(noise(xOff1)*255,noise(yOff1)*255,noise(zOff1)*255);
+          fill(colors[int(random(1,11))]);
           noStroke();
           square(5+C,5+R,40);
           break;
         case 2:
-          fill(noise(xOff1)*255,noise(yOff1)*255,noise(zOff1)*255);
+          fill(colors[int(random(1,11))]);
           noStroke();
           circle(25+C,25+R,40);
           break;
         case 3:
-          fill(noise(xOff1)*255,noise(yOff1)*255,noise(zOff1)*255);
+          fill(colors[int(random(1,11))]);
           noStroke();
           quad(25+C,5+R,45+C,25+R,25+C,45+R,5+C,25+R);
         break;
@@ -69,17 +84,17 @@ for(int r = 0; r < 20; r++){
       zOff1 += increment;
       switch(e[r][c][1]){
         case 1:
-          fill(noise(xOff2)*150,noise(yOff2)*150,noise(zOff2)*150);
+          fill(colors[int(random(1,11))]);
           noStroke();
           square(10+C,10+R,30);
           break;
         case 2:
-          fill(noise(xOff2)*150,noise(yOff2)*150,noise(zOff2)*150);
+          fill(colors[int(random(1,11))]);
           noStroke();
           circle(25+C,25+R,30);
           break;
         case 3:
-          fill(noise(xOff2)*150,noise(yOff2)*150,noise(zOff2)*150);
+          fill(colors[int(random(1,11))]);
           noStroke();
           quad(25+C,10+R,40+C,25+R,25+C,40+R,10+C,25+R);
         break;
@@ -89,17 +104,17 @@ for(int r = 0; r < 20; r++){
       zOff2 += increment;
       switch(e[r][c][2]){
         case 1:
-          fill(noise(xOff3)*255,noise(yOff3)*255,noise(zOff3)*255);
+          fill(colors[int(random(1,11))]);
           noStroke();
           square(15+C,15+R,20);
           break;
         case 2:
-          fill(noise(xOff3)*255,noise(yOff3)*255,noise(zOff3)*255);
+          fill(colors[int(random(1,11))]);
           noStroke();
           circle(25+C,25+R,20);
           break;
         case 3:
-          fill(noise(xOff3)*255,noise(yOff3)*255,noise(zOff3)*255);
+          fill(colors[int(random(1,11))]);
           noStroke();
           quad(25+C,15+R,35+C,25+R,25+C,35+R,15+C,25+R);
         break;
@@ -109,17 +124,17 @@ for(int r = 0; r < 20; r++){
       zOff3 += increment;
       switch(e[r][c][3]){
         case 1:
-          fill(noise(xOff4)*255,noise(yOff4)*255,noise(zOff4)*255);
+          fill(colors[int(random(1,11))]);
           noStroke();
           square(20+C,20+R,10);
           break;
         case 2:
-          fill(noise(xOff4)*255,noise(yOff4)*255,noise(zOff4)*255);
+          fill(colors[int(random(1,11))]);
           noStroke();
           circle(25+C,25+R,10);
           break;
         case 3:
-          fill(noise(xOff4)*255,noise(yOff4)*255,noise(zOff4)*255);
+          fill(colors[int(random(1,11))]);
           noStroke();
           quad(25+C,20+R,30+C,25+R,25+C,30+R,20+C,25+R);
         break;
