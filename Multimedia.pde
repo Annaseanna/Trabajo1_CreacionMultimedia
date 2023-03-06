@@ -10,7 +10,7 @@ color color9= color(59, 154, 225);
 color color10= color(49, 32, 224);
 color color11= color(240, 234, 190);
 int[] colums;
-int speed = 20;
+int speed = 5;
 color[] colors  = {  
   color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11
 };
@@ -67,11 +67,14 @@ int[] cc42 = new int[400];
 int[] cc43 = new int[400];
 
 void draw(){
+  
+  
   if (b){
     e = figuras();
   }
   
 int orden = 0;
+background(0);
 for(int r = 0; r < 20; r++){
     for(int c = 0; c < 20; c++){   
       int C = 45*c;
@@ -162,9 +165,17 @@ for(int r = 0; r < 20; r++){
   
 b = false;
 for (int i = 0; i < 20; i++) {
-  fill(0); 
-  blendMode(BLEND);
+  fill(201,196,200);
+  rect(5+45*i, colums[i]-21,40,40);
+  fill(154,153,162);
+  rect(5+45*i, colums[i]-21,40,40);
+  fill(104,111,119);
+  rect(5+45*i, colums[i]-14,40,40);
+  fill(57,60,52);
+  rect(5+45*i, colums[i]-7,40,40);
+  fill(13,11,10);
   rect(5+45*i, colums[i],40,40);
+  
   colums[i] += speed; 
   if (colums[i] > height) { 
     colums[i] = int(random(-height, 0));
