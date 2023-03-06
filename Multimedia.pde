@@ -1,3 +1,10 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 color color1= color(255, 225, 93);
 color color2= color(244, 157, 26);
 color color3= color(220, 53, 53);
@@ -15,6 +22,10 @@ color[] colors  = {
   color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11
 };
 
+Minim minim;
+AudioPlayer player;
+float amplitud;
+float sizeSq;
 
 
 public int dilei(int a, int c){
@@ -29,6 +40,10 @@ void setup(){
   size(905,905);
   background(0);
   frameRate(60);
+  //Aqui se cambia la pista
+  minim = new Minim(this);
+  player = minim.loadFile("song5.mp3");
+  player.play();
   colums = new int[20];
   for (int i = 0; i < 20; i++) {
     colums[i] = int(random(-height, 0));
@@ -163,20 +178,23 @@ for(int r = 0; r < 20; r++){
     }
   }
   
+amplitud = constrain(player.mix.level(),0.0,0.35);
+sizeSq = map(amplitud, 0.0,0.35,40,160);
+  
    b = false;
 for (int i = 0; i < 20; i++) {
   fill(128,128,128,100);
-  rect(5+45*i, colums[i]-40,40,40);
+  rect(5+45*i, colums[i]-40,40,sizeSq);
   fill(102,102,102,125);
-  rect(5+45*i, colums[i]-32,40,40);
+  rect(5+45*i, colums[i]-32,40,sizeSq);
   fill(77,77,77,150);
-  rect(5+45*i, colums[i]-24,40,40);
+  rect(5+45*i, colums[i]-24,40,sizeSq);
   fill(51,51,51,175);
-  rect(5+45*i, colums[i]-16,40,40);
+  rect(5+45*i, colums[i]-16,40,sizeSq);
   fill(26,26,26,200);
-  rect(5+45*i, colums[i]-8,40,40);
+  rect(5+45*i, colums[i]-8,40,sizeSq);
   fill(13,11,10);
-  rect(5+45*i, colums[i],40,40);
+  rect(5+45*i, colums[i],40,sizeSq);
   
   colums[i] += speed; 
   if (colums[i] > height) { 
