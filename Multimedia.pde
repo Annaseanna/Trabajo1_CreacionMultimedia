@@ -163,16 +163,18 @@ for(int r = 0; r < 20; r++){
     }
   }
   
-b = false;
+   b = false;
 for (int i = 0; i < 20; i++) {
-  fill(201,196,200);
-  rect(5+45*i, colums[i]-21,40,40);
-  fill(154,153,162);
-  rect(5+45*i, colums[i]-21,40,40);
-  fill(104,111,119);
-  rect(5+45*i, colums[i]-14,40,40);
-  fill(57,60,52);
-  rect(5+45*i, colums[i]-7,40,40);
+  fill(128,128,128);
+  rect(5+45*i, colums[i]-40,40,40);
+  fill(102,102,102);
+  rect(5+45*i, colums[i]-32,40,40);
+  fill(77,77,77);
+  rect(5+45*i, colums[i]-24,40,40);
+  fill(51,51,51);
+  rect(5+45*i, colums[i]-16,40,40);
+  fill(26,26,26);
+  rect(5+45*i, colums[i]-8,40,40);
   fill(13,11,10);
   rect(5+45*i, colums[i],40,40);
   
