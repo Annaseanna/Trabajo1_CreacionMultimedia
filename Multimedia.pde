@@ -165,15 +165,15 @@ for(int r = 0; r < 20; r++){
   
    b = false;
 for (int i = 0; i < 20; i++) {
-  fill(128,128,128);
+  fill(128,128,128,100);
   rect(5+45*i, colums[i]-40,40,40);
-  fill(102,102,102);
+  fill(102,102,102,125);
   rect(5+45*i, colums[i]-32,40,40);
-  fill(77,77,77);
+  fill(77,77,77,150);
   rect(5+45*i, colums[i]-24,40,40);
-  fill(51,51,51);
+  fill(51,51,51,175);
   rect(5+45*i, colums[i]-16,40,40);
-  fill(26,26,26);
+  fill(26,26,26,200);
   rect(5+45*i, colums[i]-8,40,40);
   fill(13,11,10);
   rect(5+45*i, colums[i],40,40);
