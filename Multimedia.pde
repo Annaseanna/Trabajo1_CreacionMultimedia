@@ -12,10 +12,21 @@ color color11= color(240, 234, 190);
 color[] colors  = {  
   color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11
 };
+
+
+
+public int dilei(int a, int c){
+  if(a%240 == 0){
+  return int(random(1,11));
+  } else {
+    return c;
+  }
+  
+}
 void setup(){
   size(905,905);
   background(0);
-  frameRate(1);
+  frameRate(60);
 }
 
 int[][][] figuras(){
@@ -34,90 +45,117 @@ for ( int  y = 0;  y < 20 ; y++ ) {
 boolean b = true;
 
   int[][][] e = new int[20][20][4];
-void draw(){
 
+int yamequierodormir = 0;
+int[] cc11 = new int[400];
+int[] cc12 = new int[400];
+int[] cc13 = new int[400];
+int[] cc21 = new int[400];
+int[] cc22 = new int[400];
+int[] cc23 = new int[400];
+int[] cc31 = new int[400];
+int[] cc32 = new int[400];
+int[] cc33 = new int[400];
+int[] cc41 = new int[400];
+int[] cc42 = new int[400];
+int[] cc43 = new int[400];
+
+void draw(){
   if (b){
     e = figuras();
   }
+  
+int orden = 0;
 for(int r = 0; r < 20; r++){
     for(int c = 0; c < 20; c++){   
-      
       int C = 45*c;
       int R = 45*r;
-      switch(e[r][c][0]){
+      switch(e[r][c][0]){  
         case 1:
-          fill(colors[int(random(1,11))]);
+          cc11[orden] = dilei(yamequierodormir,cc11[orden]);
+          fill(colors[cc11[orden]]);
           noStroke();
           square(5+C,5+R,40);
           break;
         case 2:
-          fill(colors[int(random(1,11))]);
+          cc12[orden] = dilei(yamequierodormir,cc12[orden]);
+          fill(colors[cc12[orden]]);
           noStroke();
           circle(25+C,25+R,40);
           break;
         case 3:
-          fill(colors[int(random(1,11))]);
+          cc13[orden] = dilei(yamequierodormir,cc13[orden]);
+          fill(colors[cc13[orden]]);
           noStroke();
           quad(25+C,5+R,45+C,25+R,25+C,45+R,5+C,25+R);
         break;
       }
-
       switch(e[r][c][1]){
         case 1:
-          fill(colors[int(random(1,11))]);
+          cc21[orden] = dilei(yamequierodormir,cc21[orden]);
+          fill(colors[cc21[orden]]);
           noStroke();
           square(10+C,10+R,30);
           break;
         case 2:
-          fill(colors[int(random(1,11))]);
+          cc22[orden] = dilei(yamequierodormir,cc22[orden]);
+          fill(colors[cc22[orden]]);
           noStroke();
           circle(25+C,25+R,30);
           break;
         case 3:
-          fill(colors[int(random(1,11))]);
+          cc23[orden] = dilei(yamequierodormir,cc23[orden]);
+          fill(colors[cc23[orden]]);
           noStroke();
           quad(25+C,10+R,40+C,25+R,25+C,40+R,10+C,25+R);
         break;
       }
-
       switch(e[r][c][2]){
         case 1:
-          fill(colors[int(random(1,11))]);
+          cc31[orden] = dilei(yamequierodormir,cc31[orden]);
+          fill(colors[cc31[orden]]);
           noStroke();
           square(15+C,15+R,20);
           break;
         case 2:
-          fill(colors[int(random(1,11))]);
+          cc32[orden] = dilei(yamequierodormir,cc32[orden]);
+          fill(colors[cc32[orden]]);
           noStroke();
           circle(25+C,25+R,20);
           break;
         case 3:
-          fill(colors[int(random(1,11))]);
+          cc33[orden] = dilei(yamequierodormir,cc33[orden]);
+          fill(colors[cc33[orden]]);
           noStroke();
           quad(25+C,15+R,35+C,25+R,25+C,35+R,15+C,25+R);
         break;
       }
-
       switch(e[r][c][3]){
         case 1:
-          fill(colors[int(random(1,11))]);
+          cc41[orden] = dilei(yamequierodormir,cc41[orden]);
+          fill(colors[cc41[orden]]);
           noStroke();
           square(20+C,20+R,10);
           break;
         case 2:
-          fill(colors[int(random(1,11))]);
+          cc42[orden] = dilei(yamequierodormir,cc42[orden]);
+          fill(colors[cc42[orden]]);
           noStroke();
           circle(25+C,25+R,10);
           break;
         case 3:
-          fill(colors[int(random(1,11))]);
+          cc43[orden] = dilei(yamequierodormir,cc43[orden]);
+          fill(colors[cc43[orden]]);
           noStroke();
           quad(25+C,20+R,30+C,25+R,25+C,30+R,20+C,25+R);
         break;
       }
+      fill(0);
+      square(5,5+yamequierodormir,40);
+      orden++;
     }
   }
   
 b = false;
-  
+yamequierodormir = yamequierodormir + 5;
 }
