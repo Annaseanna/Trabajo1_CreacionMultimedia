@@ -9,6 +9,8 @@ color color8= color(133, 14, 53);
 color color9= color(59, 154, 225);
 color color10= color(49, 32, 224);
 color color11= color(240, 234, 190);
+int[] colums;
+int speed = 30;
 color[] colors  = {  
   color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11
 };
@@ -27,6 +29,10 @@ void setup(){
   size(905,905);
   background(0);
   frameRate(60);
+  colums = new int[20];
+  for (int i = 0; i < 20; i++) {
+    colums[i] = int(random(-height, 0));
+  }  
 }
 
 int[][][] figuras(){
@@ -150,12 +156,22 @@ for(int r = 0; r < 20; r++){
           quad(25+C,20+R,30+C,25+R,25+C,30+R,20+C,25+R);
         break;
       }
-      fill(0);
-      square(5,5+yamequierodormir,40);
       orden++;
     }
   }
   
 b = false;
+for (int i = 0; i < 20; i++) {
+  fill(0); 
+  blendMode(BLEND);
+  rect(5+45*i, colums[i],40,40);
+  colums[i] += speed; 
+  if (colums[i] > height) { 
+    colums[i] = int(random(-height, 0));
 yamequierodormir = yamequierodormir + 5;
+  }
 }
+ 
+
+  }
+
