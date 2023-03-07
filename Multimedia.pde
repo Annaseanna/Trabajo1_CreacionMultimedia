@@ -183,18 +183,18 @@ sizeSq = map(amplitud, 0.0,0.35,40,160);
   
    b = false;
 for (int i = 0; i < 20; i++) {
-  fill(128,128,128,100);
-  rect(5+45*i, colums[i]-40,40,sizeSq);
-  fill(102,102,102,125);
-  rect(5+45*i, colums[i]-32,40,sizeSq);
-  fill(77,77,77,150);
-  rect(5+45*i, colums[i]-24,40,sizeSq);
-  fill(51,51,51,175);
-  rect(5+45*i, colums[i]-16,40,sizeSq);
-  fill(26,26,26,200);
-  rect(5+45*i, colums[i]-8,40,sizeSq);
+  fill(128,128,128,195);
+  rect(5+45*i, colums[i]-40-sizeSq,40,40);
+  fill(102,102,102,200);
+  rect(5+45*i, colums[i]-32-sizeSq*0.8,40,40);
+  fill(77,77,77,205);
+  rect(5+45*i, colums[i]-24-sizeSq*0.6,40,40);
+  fill(51,51,51,210);
+  rect(5+45*i, colums[i]-16-sizeSq*0.4,40,40);
+  fill(26,26,26,215);
+  rect(5+45*i, colums[i]-8-sizeSq*0.2,40,40);
   fill(13,11,10);
-  rect(5+45*i, colums[i],40,sizeSq);
+  rect(5+45*i, colums[i],40,40);
   
   colums[i] += speed; 
   if (colums[i] > height) { 
