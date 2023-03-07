@@ -42,7 +42,7 @@ void setup(){
   frameRate(60);
   //Aqui se cambia la pista
   minim = new Minim(this);
-  player = minim.loadFile("song5.mp3");
+  player = minim.loadFile("song7.mp3");
   player.play();
   colums = new int[20];
   for (int i = 0; i < 20; i++) {
